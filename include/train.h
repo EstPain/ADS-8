@@ -22,6 +22,7 @@ class Train {
     bool isEmpty() const {
         return !first;
     }
+
  public:
   Train();
   void addCage(bool light); // добавить вагон с начальным состоянием лампочки
