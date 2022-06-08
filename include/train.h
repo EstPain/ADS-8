@@ -11,6 +11,17 @@ class Train {
   };
   int countOp; // счетчик шагов (число переходов из вагона в вагон)
   Cage *first; // точка входа в поезд (первый вагон)
+  Cage* tail, * current;
+    Train::Cage* create(bool light) {
+        Cage* cage = new Cage;
+        cage->light = light;
+        cage->next = nullptr;
+        cage->prev = nullptr;
+        return cage;
+    }
+    bool isEmpty() const {
+        return !first;
+    }
  public:
   Train();
   void addCage(bool light); // добавить вагон с начальным состоянием лампочки
